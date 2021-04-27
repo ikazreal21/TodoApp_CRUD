@@ -1,0 +1,17 @@
+<h1>My Todo App</h1>
+
+<table>
+  <tr>
+    <th>Items</th>
+    <th></th>
+  </tr>
+  {% for task in tasklist %}
+  <tr>
+    <td>{{task.title}}</td>
+    <td></td>
+    <td><a href="{% url 'detail' task.id %}">View</a></td>
+  </tr>
+  {% empty %}
+  <h3>No Items in List</h3>
+  {% endfor %}
+</table>
