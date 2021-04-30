@@ -1,17 +1,100 @@
-<h1>My Todo App</h1>
+{% extends 'baseapp/main.html' %} {% block content %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-lg-4">
+  <a class="navbar-brand" href="{% url 'home' %}"
+    ><i class="fa fa-bookmark"> </i> Todo App
+  </a>
+  <ul class="navbar-nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="#"></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home'%}">{{request.user}}</a>
+    </li>
+    {% if request.user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
 
-<table>
-  <tr>
-    <th>Items</th>
-    <th></th>
-  </tr>
-  {% for task in tasklist %}
-  <tr>
-    <td>{{task.title}}</td>
-    <td></td>
-    <td><a href="{% url 'detail' task.id %}">View</a></td>
-  </tr>
-  {% empty %}
-  <h3>No Items in List</h3>
-  {% endfor %}
-</table>
+<div class="col-9 mx-auto mt-4">
+  <div class="card md-5">
+    <div class="card-header bg-dark text-white">
+      <i class="fas fa-check"></i>
+      <a class="card-title">TODO</a>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-md-6 mb-3 mx-auto">
+          <form method="GET" class="form-inline">
+            <div class="input-group">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                name="search-area"
+                placeholder="Search"
+                aria-label="Search"
+                value="{{search_in}}"
+              />
+            </div>
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+              value="Search"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div class="col-md-6 mb-3">
+          <a class="btn btn-primary" href="{% url 'create' %}">
+            <i class="far fa-edit"></i> Create Task
+          </a>
+        </div>
+      </div>
+      <div class="form-row">
+        {% for task in tasklist %}
+        <div class="col-md-8 mb-3">
+          <div class="input-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="{{task.title}}"
+              disabled
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">
+                {% if task.complete == True %}
+                <i class="far fa-check"></i>
+                {% else %}
+                <i class="far fa-circle"></i>
+                {% endif %}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mb-3">
+          <a class="btn btn-warning" href="{% url 'update' task.id %}">
+            <i class="far fa-edit"></i> Update
+          </a>
+        </div>
+        <div class="col-md-2 mb3">
+          <a class="btn btn-danger" href="{% url 'delete' task.id %}">
+            <i class="far fa-trash"></i> Delete
+          </a>
+        </div>
+        {% empty %}
+        <h3>No Items in List</h3>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
