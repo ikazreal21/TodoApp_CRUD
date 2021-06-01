@@ -7,19 +7,13 @@
       <a class="card-title"> Task</a>
     </div>
     <div class="card-body">
-      <div class="form-row">
-        <div class="col-md-6 mb-3 mx-auto">
-          <a class="btn btn-primary" href="{% url 'home' %}">Go Back</a>
-          <br />
-          <form method="post" action="" class="form-inline">
-            {%csrf_token%} {{form.as_p}}
-          </form>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="col-md-6 mb-3 mx-auto">
+      <div class="main">
+        <a class="btn btn-primary" href="{% url 'home' %}">Go Back</a>
+        <br />
+        <form method="post" action="" class="form-inline">
+          {%csrf_token%} {{form.as_p}}
           <input class="btn btn-primary" type="submit" value="Submit" />
-        </div>
+        </form>
       </div>
     </div>
   </div>
