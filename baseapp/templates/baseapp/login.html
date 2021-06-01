@@ -7,17 +7,14 @@
       <a class="card-title"> Login</a>
     </div>
     <div class="card-body">
-      <center>
-        <div class="main">
-          <form method="post" action="" class="form-inline">
-            {% csrf_token %} {{form.as_p}}
-            <input class="btn btn-primary" type="submit" value="Login" />
-          </form>
-          <p>
-            Don't have an account? <a href="{% url 'register'%}">Register</a>
-          </p>
-        </div>
-      </center>
+      <div class="main">
+        <form method="post" action="" >
+          {% csrf_token %} {{form.as_p}}
+          <input class="btn btn-primary" type="submit" value="Login" />
+        </form>
+        <br />
+        <p>Don't have an account? <a href="{% url 'register'%}">Register</a></p>
+      </div>
     </div>
   </div>
 </div>

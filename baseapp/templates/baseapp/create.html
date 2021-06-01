@@ -10,7 +10,7 @@
       <div class="main">
         <a class="btn btn-primary" href="{% url 'home' %}">Go Back</a>
         <br />
-        <form method="post" action="" class="form-inline">
+        <form method="post" action="" >
           {%csrf_token%} {{form.as_p}}
           <input class="btn btn-primary" type="submit" value="Submit" />
         </form>

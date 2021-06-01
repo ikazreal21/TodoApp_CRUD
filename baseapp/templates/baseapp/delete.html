@@ -10,9 +10,10 @@
       <div class="main">
         <a class="btn btn-primary" href="{% url 'home' %}">Go back</a>
         <br />
-        <form method="post" action="" class="form-inline">
+        <form method="post" action="">
           {% csrf_token %}
           <p>Are you sure you want to delete? {{detail}}</p>
+          <br />
           <input class="btn btn-danger" type="submit" value="Delete" />
         </form>
       </div>
