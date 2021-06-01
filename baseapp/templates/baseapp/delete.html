@@ -9,11 +9,13 @@
     <div class="card-body">
       <div class="form-row">
         <div class="col-md-6 mb-3 mx-auto">
-          <a class="btn btn-warning" href="{% url 'home' %}">Go back</a>
+          <a class="btn btn-primary" href="{% url 'home' %}">Go back</a>
+          <br />
           <form method="post" action="" class="form-inline">
             {% csrf_token %}
             <p>Are you sure you want to delete? {{detail}}</p>
-            <input class="btn btn-warning" type="submit" value="Delete" />
+            <br />
+            <input class="btn btn-danger" type="submit" value="Delete" />
           </form>
         </div>
       </div>
