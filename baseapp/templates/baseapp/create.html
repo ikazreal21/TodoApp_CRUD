@@ -3,7 +3,7 @@
 <div class="col-9 mx-auto mt-4">
   <div class="card">
     <div class="card-header bg-dark text-white">
-      <i class="fas fa-trash"></i>
+      <i class="fas fa-check"></i>
       <a class="card-title"> Task</a>
     </div>
     <div class="card-body">
@@ -13,9 +13,12 @@
           <br />
           <form method="post" action="" class="form-inline">
             {%csrf_token%} {{form.as_p}}
-            <br />
-            <input class="btn btn-primary" type="submit" value="Submit" />
           </form>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3 mx-auto">
+          <input class="btn btn-primary" type="submit" value="Submit" />
         </div>
       </div>
     </div>
