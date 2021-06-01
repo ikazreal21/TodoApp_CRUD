@@ -12,16 +12,15 @@
           <center>
             <form method="post" action="" class="form-inline">
               {% csrf_token %}
+              
               <label>{{form.username.label}}</label>
               {{form.username}}
               <label>{{form.password1.label}}</label>
               {{form.password1}}
               <label>{{form.password2.label}}</label>
               {{form.password2}}
-              <br />
               <input class="btn btn-primary" type="submit" value="Register" />
             </form>
-            <br />
             <p>
               Already have an account? <a href="{% url 'login' %}">Login</a>
             </p>
