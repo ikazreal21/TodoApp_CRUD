@@ -1,6 +1,4 @@
-{% extends 'baseapp/main.html' %} 
-{% block content %}
-
+{% extends 'baseapp/main.html' %} {% block content %}
 
 <div class="col-9 mx-auto mt-4">
   <div class="card">
@@ -11,9 +9,11 @@
     <div class="card-body">
       <div class="form-row">
         <div class="col-md-6 mb-3 mx-auto">
-          <h4><a href="{% url 'home' %}">Go Back</a></h4>
+          <a class="btn btn-primary" href="{% url 'home' %}">Go Back</a>
+          <br />
           <form method="post" action="" class="form-inline">
             {%csrf_token%} {{form.as_p}}
+            <br />
             <input class="btn btn-primary" type="submit" value="Submit" />
           </form>
         </div>
@@ -21,20 +21,5 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-<h4><a href="{% url 'home' %}">Go Back</a></h3>
-
-<form method="post" action="" class="form-inline">
-  {%csrf_token%} {{form.as_p}}
-  <input type="submit" value="Submit" />
-</form>
 
 {% endblock %}

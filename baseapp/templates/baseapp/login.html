@@ -12,6 +12,7 @@
           <div class="col-md-6 mb-3 mx-auto">
             <form method="post" action="" class="form-inline">
               {% csrf_token %} {{form.as_p}}
+              <br />
               <input class="btn btn-primary" type="submit" value="Login" />
             </form>
             <p>

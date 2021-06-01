@@ -1,7 +1,4 @@
-{% extends 'baseapp/main.html' %} 
-{% block content %}
-
-
+{% extends 'baseapp/main.html' %} {% block content %}
 
 <div class="col-9 mx-auto mt-4">
   <div class="card">
@@ -12,19 +9,27 @@
     <div class="card-body">
       <div class="form-row">
         <div class="col-md-6 mb-3 mx-auto">
-         <center>
-          <form method="post" action="" class="form-inline">
-            {% csrf_token %} {{form.as_p}}
-            <input class="btn btn-primary" type="submit" value="Register" />
-          </form>
-          <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
-         </center>
+          <center>
+            <form method="post" action="" class="form-inline">
+              {% csrf_token %}
+              <label>{{form.username.label}}</label>
+              {{form.username}}
+              <label>{{form.password1.label}}</label>
+              {{form.password1}}
+              <label>{{form.password2.label}}</label>
+              {{form.password2}}
+              <br />
+              <input class="btn btn-primary" type="submit" value="Register" />
+            </form>
+            <br />
+            <p>
+              Already have an account? <a href="{% url 'login' %}">Login</a>
+            </p>
+          </center>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 
 {% endblock %}
