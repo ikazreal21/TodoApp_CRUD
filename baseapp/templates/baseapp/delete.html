@@ -7,20 +7,14 @@
       <a class="card-title"> Delete</a>
     </div>
     <div class="card-body">
-      <div class="form-row">
-        <div class="col-md-6 mb-3 mx-auto">
-          <a class="btn btn-primary" href="{% url 'home' %}">Go back</a>
-          <br />
-          <form method="post" action="" class="form-inline">
-            {% csrf_token %}
-            <p>Are you sure you want to delete? {{detail}}</p>
-          </form>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="col-md-6 mb-3 mx-auto "">
+      <div class="main">
+        <a class="btn btn-primary" href="{% url 'home' %}">Go back</a>
+        <br />
+        <form method="post" action="" class="form-inline">
+          {% csrf_token %}
+          <p>Are you sure you want to delete? {{detail}}</p>
           <input class="btn btn-danger" type="submit" value="Delete" />
-        </div>
+        </form>
       </div>
     </div>
   </div>
