@@ -3,23 +3,25 @@
 <div class="col-9 mx-auto mt-4">
   <div class="card">
     <div class="card-header bg-dark text-white">
-      <i class="fas fa-trash"></i>
-      <a class="card-user-edit"> Register</a>
+      <i class="fas fa-user-edit"></i>
+      <a class="card-title"> Register</a>
     </div>
-    <div class="main">
-      <form method="post" action="">
-        {% csrf_token %}
-        <label>{{form.username.label}}</label>
-        {{form.username}}
+    <div class="card-body">
+      <div class="main">
+        <form method="post" action="">
+          {% csrf_token %}
+          <label>{{form.username.label}}</label>
+          {{form.username}}
 
-        <label>{{form.password1.label}}</label>
-        {{form.password1}}
+          <label>{{form.password1.label}}</label>
+          {{form.password1}}
 
-        <label>{{form.password2.label}}</label>
-        {{form.password2}}
-        <input class="btn btn-primary" type="submit" value="Register" />
-      </form>
-      <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+          <label>{{form.password2.label}}</label>
+          {{form.password2}}
+          <input class="btn btn-primary" type="submit" value="Register" />
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      </div>
     </div>
   </div>
 </div>

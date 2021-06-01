@@ -9,7 +9,7 @@
     <div class="card-body">
       <div class="main">
         <a class="btn btn-primary" href="{% url 'home' %}">Go back</a>
-        <br />
+        <p></p>
         <form method="post" action="">
           {% csrf_token %}
           <p>Are you sure you want to delete? {{detail}}</p>
