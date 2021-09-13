@@ -10,6 +10,6 @@ pathspec==0.8.1
 psycopg2-binary==2.8.6
 pytz==2021.1
 regex==2021.4.4
-sqlparse==0.4.1
+sqlparse==0.4.2
 toml==0.10.2
 whitenoise==5.2.0
